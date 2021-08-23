@@ -1,2 +1,4 @@
-// config file
-console.log('Hello25');
+import getData from './getData';
+
+const cityData = getData('delhi');
+cityData.then((data) => console.log(data));
