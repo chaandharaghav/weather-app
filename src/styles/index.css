@@ -1,6 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
 
+:root {
+  --overlay: rgba(255, 0, 150, 0.3);
+}
+
 body {
   font-family: 'Nunito', sans-serif;
   font-size: 1.5rem;
+  color: white;
+
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.247), rgba(0, 0, 0, 0.171)),
+    url(https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=701&q=80);
+}
+
+@media (min-width: 767px) {
+  body {
+    color: black;
+    background: none;
+
+    display: flex;
+    justify-content: center;
+  }
 }
