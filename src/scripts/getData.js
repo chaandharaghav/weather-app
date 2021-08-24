@@ -16,11 +16,12 @@ function getDetails(data) {
   });
 }
 
-async function getData(city) {
+async function getData(city, unit) {
+  const units = unit ?? 'metric';
   let data;
 
   try {
-    const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&APPID=e4649cf7308c77156e4448b72e54352a`;
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&APPID=e4649cf7308c77156e4448b72e54352a&units=${units}`;
     const response = await fetch(url, { mode: 'cors' });
     data = await response.json();
 
