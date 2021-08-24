@@ -36,6 +36,13 @@
   background-color: hsl(202, 73%, 65%);
 }
 
+#alert-div {
+  color: red;
+  text-align: center;
+
+  font-size: 0.9rem;
+}
+
 @media (min-width: 767px) {
   #form-div form * {
     margin-top: 1rem;

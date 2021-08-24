@@ -1,6 +1,10 @@
 // importing styles
 import '../styles/formDisplay.css';
 
+// importing scripts
+import addFormEvents from './formControls';
+
+// create form div and append to section
 function loadForm() {
   const formDiv = document.createElement('div');
   formDiv.id = 'form-div';
@@ -25,6 +29,8 @@ function loadForm() {
 
   const section = document.querySelector('section');
   section.append(formDiv);
+
+  addFormEvents(form);
 }
 
 export default loadForm;
