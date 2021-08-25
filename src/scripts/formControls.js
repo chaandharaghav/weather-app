@@ -1,4 +1,4 @@
-import getData from './getData';
+import { getData } from './getData';
 
 // form submit events
 export default function addFormEvents(elem) {

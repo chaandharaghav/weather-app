@@ -21,9 +21,18 @@ function getDetails(data) {
   });
 }
 
+function findUnit() {
+  const unitSwitcher = document.querySelector('#unit-switch-btn');
+
+  if (unitSwitcher.innerText === 'C') {
+    return 'metric';
+  }
+  return 'imperial';
+}
+
 async function getData(city, unit) {
   const cityName = city ?? 'pollachi';
-  const units = unit ?? 'metric';
+  const units = unit ?? findUnit();
   let data;
 
   try {
@@ -48,13 +57,7 @@ function updateUnit() {
   const city = document.querySelector('#city-name');
   cityName = city.innerText;
 
-  const unitSwitcher = document.querySelector('#unit-switch-btn');
-
-  if (unitSwitcher.innerText === 'C') {
-    unit = 'metric';
-  } else {
-    unit = 'imperial';
-  }
+  unit = findUnit();
 
   getData(cityName, unit);
 }
