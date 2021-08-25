@@ -1,0 +1,26 @@
+:root {
+  --blue: hsl(207, 100%, 76%);
+}
+
+#unit-switch-btn {
+  height: 70px;
+  width: 70px;
+  position: fixed;
+  bottom: 0px;
+  right: 0px;
+
+  font-size: 1.3rem;
+
+  border-radius: 50%;
+  margin: 2rem;
+}
+
+#unit-switch-btn:active {
+  background-color: var(--blue);
+}
+
+@media (min-width: 1023px) {
+  #unit-switch-btn:hover {
+    background-color: var(--blue);
+  }
+}

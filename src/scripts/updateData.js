@@ -14,12 +14,24 @@ function updateData(data) {
   const humidity = document.querySelector('#humidity');
   const windSpeed = document.querySelector('#wind-speed');
 
-  temp.innerText = `${data.temp}\xB0c`;
-  minTemp.innerText = `${data.minTemp}\xB0c`;
-  maxTemp.innerText = `${data.maxTemp}\xB0c`;
+  // choosing the unit
+  let tempUnit = null;
+  let windSpeedUnit = null;
+  const unitSwitcher = document.querySelector('#unit-switch-btn');
+  if (unitSwitcher.innerText === 'C') {
+    tempUnit = 'c';
+    windSpeedUnit = 'm/s';
+  } else {
+    tempUnit = 'f';
+    windSpeedUnit = 'miles/hr';
+  }
+
+  temp.innerText = `${data.temp}\xB0${tempUnit}`;
+  minTemp.innerText = `${data.minTemp}\xB0${tempUnit}`;
+  maxTemp.innerText = `${data.maxTemp}\xB0${tempUnit}`;
   pressure.innerText = `${data.pressure} hPa`;
   humidity.innerText = `${data.humidity}%`;
-  windSpeed.innerText = `${data.windSpeed}m/s`;
+  windSpeed.innerText = `${data.windSpeed} ${windSpeedUnit}`;
   cityName.innerText = data.cityName;
   weatherStatus.innerText = data.weatherStatus;
 

@@ -22,16 +22,16 @@ function getDetails(data) {
 }
 
 async function getData(city, unit) {
+  const cityName = city ?? 'pollachi';
   const units = unit ?? 'metric';
   let data;
 
   try {
-    const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&APPID=e4649cf7308c77156e4448b72e54352a&units=${units}`;
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&APPID=e4649cf7308c77156e4448b72e54352a&units=${units}`;
     const response = await fetch(url, { mode: 'cors' });
     data = await response.json();
 
     if (data.cod === 200) {
-      console.log(data);
       getDetails(data);
       removeAlert();
     } else {
@@ -42,4 +42,21 @@ async function getData(city, unit) {
   }
 }
 
-export default getData;
+function updateUnit() {
+  let unit = null;
+  let cityName = null;
+  const city = document.querySelector('#city-name');
+  cityName = city.innerText;
+
+  const unitSwitcher = document.querySelector('#unit-switch-btn');
+
+  if (unitSwitcher.innerText === 'C') {
+    unit = 'metric';
+  } else {
+    unit = 'imperial';
+  }
+
+  getData(cityName, unit);
+}
+
+export { getData, updateUnit };
