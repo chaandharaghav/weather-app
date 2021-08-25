@@ -6,6 +6,8 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  z-index: 2;
 }
 
 #city-name {
@@ -42,17 +44,26 @@
     background-size: cover;
 
     color: white;
-    margin-top: 2rem;
+    margin: 0 auto;
+    margin-top: 3rem;
     border-radius: 1rem;
   }
 }
 
 @media (min-width: 1023px) {
   #main-tile {
-    width: 40vw;
+    width: 50vw;
     max-width: 600px;
+
     position: relative;
-    right: 60%;
+    right: 20%;
     top: 13%;
+
+    padding: 2rem;
+  }
+
+  #section {
+    display: flex;
+    flex-direction: column;
   }
 }

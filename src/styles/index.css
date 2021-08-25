@@ -17,9 +17,13 @@ body {
   body {
     color: black;
     background: none;
+    background-color: hsl(0, 0%, 83%);
 
     display: flex;
-    justify-content: center;
+  }
+
+  section {
+    width: 100vw;
   }
 }
 
