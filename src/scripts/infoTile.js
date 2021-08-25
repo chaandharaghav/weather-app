@@ -7,16 +7,15 @@ function loadInfoTile() {
   const weatherDetails = document.createElement('div');
   weatherDetails.id = 'additional-weather-details';
 
-  const weatherDetailsList = ['pressure', 'humidity', 'windspeed'];
+  const weatherDetailsList = ['pressure', 'humidity', 'wind-speed'];
 
   for (let i = 0; i < weatherDetailsList.length; i += 1) {
     const weatherDetailDiv = document.createElement('div');
     weatherDetailDiv.classList.add('weather-detail');
 
     const weatherDetailValue = document.createElement('span');
-    weatherDetailValue.innerText = '23';
+    weatherDetailValue.id = weatherDetailsList[i];
     const weatherDetailName = document.createElement('span');
-    weatherDetailName.id = weatherDetailsList[i];
     weatherDetailName.innerText = weatherDetailsList[i];
 
     weatherDetailDiv.append(weatherDetailValue, weatherDetailName);

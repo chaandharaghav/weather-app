@@ -1,18 +1,23 @@
 import { alertUser, removeAlert } from './formErrorControls';
+import updateData from './updateData';
 
 function getDetails(data) {
   const minTemp = data.main.temp_min;
   const maxTemp = data.main.temp_max;
   const { temp, pressure, humidity } = data.main;
   const windSpeed = data.wind.speed;
+  const cityName = data.name;
+  const weatherStatus = data.weather[0].main;
 
-  console.log({
+  updateData({
     temp,
     minTemp,
     maxTemp,
     pressure,
     humidity,
     windSpeed,
+    cityName,
+    weatherStatus,
   });
 }
 
@@ -26,6 +31,7 @@ async function getData(city, unit) {
     data = await response.json();
 
     if (data.cod === 200) {
+      console.log(data);
       getDetails(data);
       removeAlert();
     } else {

@@ -26,14 +26,6 @@ function loadMainTile() {
   const maxTemp = document.createElement('span');
   maxTemp.id = 'max-temp';
 
-  // temp for styles
-  cityName.innerText = 'Coimbatore';
-  date.innerText = 'Sunday, February 4, 2021';
-  temp.innerText = '23\xB0c';
-  weatherStatus.innerText = 'Cloudy';
-  minTemp.innerText = '23\xB0c';
-  maxTemp.innerText = '23\xB0c';
-
   tempDiv.append(minTemp, slashSpan, maxTemp);
   mainTile.append(cityName, date, temp, weatherStatus, tempDiv);
 
