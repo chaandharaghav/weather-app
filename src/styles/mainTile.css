@@ -46,3 +46,13 @@
     border-radius: 1rem;
   }
 }
+
+@media (min-width: 1023px) {
+  #main-tile {
+    width: 40vw;
+    max-width: 600px;
+    position: relative;
+    right: 60%;
+    top: 13%;
+  }
+}

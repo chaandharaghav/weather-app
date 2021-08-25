@@ -22,3 +22,14 @@ body {
     justify-content: center;
   }
 }
+
+@media (min-width: 1023px) {
+  body {
+    height: 100vh;
+  }
+
+  section {
+    display: flex;
+    flex-direction: column;
+  }
+}
