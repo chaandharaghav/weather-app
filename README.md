@@ -7,4 +7,4 @@ What I learned
 - how to fetch data from an API
 - how to avoid common module problems such as dependency cycle
 
-[Live Demo](https://chaandharaghav.github.io/google-homepage/) :point_left:
+[Live Demo](https://chaandharaghav.github.io/weather-app/) :point_left:
